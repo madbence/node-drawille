@@ -40,6 +40,10 @@ Canvas.prototype.unset = function(x, y) {
   this.content[coord] &= ~mask;
 }
 
+Canvas.prototype.clear = function() {
+  this.content.fill(0);
+};
+
 Canvas.prototype.frame = function frame() {
   var result = [];
   for(var i = 0, j = 0; i < this.content.length; i++, j++) {
