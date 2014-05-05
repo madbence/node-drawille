@@ -18,27 +18,30 @@ function Canvas(width, height) {
   this.content.fill(0);
 }
 
-Canvas.prototype.set = function set(x, y) {
-  if(x < 0 || y < 0 || x >= this.width || y >= this.height) {
-    throw new Error('(' + [x, y].join(', ') + ') is out of the canvas!');
+var methods = {
+  set: function(coord, mask) {
+    this.content[coord] |= mask;
+  },
+  unset: function(coord, mask) {
+    this.content[coord] &= ~mask;
+  },
+  toggle: function(coord, mask) {
+    this.content[coord] ^= mask;
   }
-  var nx = Math.floor(x/2);
-  var ny = Math.floor(y/4);
-  var coord = nx + this.width/2*ny;
-  var mask = map[y%4][x%2];
-  this.content[coord] |= mask;
 };
 
-Canvas.prototype.unset = function(x, y) {
-  if(x < 0 || y < 0 || x >= this.width || y >= this.height) {
-    throw new Error('(' + [x, y].join(', ') + ') is out of the canvas!');
+Object.keys(methods).forEach(function(method) {
+  Canvas.prototype[method] = function(x, y) {
+    if(x < 0 || y < 0 || x >= this.width || y >= this.height) {
+      throw new Error('(' + [x, y].join(', ') + ') is out of the canvas!');
+    }
+    var nx = Math.floor(x/2);
+    var ny = Math.floor(y/4);
+    var coord = nx + this.width/2*ny;
+    var mask = map[y%4][x%2];
+    methods[method].call(this, coord, mask);
   }
-  var nx = Math.floor(x/2);
-  var ny = Math.floor(y/4);
-  var coord = nx + this.width/2*ny;
-  var mask = map[y%4][x%2];
-  this.content[coord] &= ~mask;
-}
+});
 
 Canvas.prototype.clear = function() {
   this.content.fill(0);
