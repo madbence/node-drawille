@@ -14,8 +14,7 @@ function draw() {
   line(80, 80, sin(t.getHours()/24, 30), 160-cos(t.getHours()/24, 30), c.set.bind(c));
   line(80, 80, sin(t.getMinutes()/60, 50), 160-cos(t.getMinutes()/60, 50), c.set.bind(c));
   line(80, 80, sin(t.getSeconds()/60+(+t%1000)/60000, 75), 160-cos(t.getSeconds()/60+(+t%1000)/60000, 75), c.set.bind(c));
-  setTimeout(draw, 1000/60);
-  console.log(c.frame());
+  process.stdout.write(c.frame());
 }
 
-draw();
+setInterval(draw, 1000/24);
