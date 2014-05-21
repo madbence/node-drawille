@@ -2,7 +2,7 @@ node-drawille
 =============
 
 Drawing in terminal with unicode braille characters.
-Basically it's a port of [drawille](https://github.com/asciimoo/drawille)
+The idea is based on [drawille](https://github.com/asciimoo/drawille)
 by @asciimoo.
 
 ## Install
