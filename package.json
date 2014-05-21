@@ -14,5 +14,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/madbence/node-drawille/issues"
+  },
+  "devDependencies": {
+    "bresenham": "0.0.1"
   }
 }
