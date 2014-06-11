@@ -35,6 +35,8 @@ Object.keys(methods).forEach(function(method) {
     if(!(x >= 0 && x < this.width && y >= 0 && y < this.height)) {
       throw new Error('(' + [x, y].join(', ') + ') is out of the canvas!');
     }
+    x = Math.floor(x);
+    y = Math.floor(y);
     var nx = Math.floor(x/2);
     var ny = Math.floor(y/4);
     var coord = nx + this.width/2*ny;
