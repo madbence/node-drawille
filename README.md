@@ -51,6 +51,10 @@ string. It uses braille characters to represent points,
 so every line has length of `w/2`, and the string contains `h/4`
 lines.
 
+## Projects
+
+- [`vtop`](https://github.com/MrRio/vtop) uses `drawille` to draw CPU and memory usage charts in the terminal
+
 ## License
 
 MIT
