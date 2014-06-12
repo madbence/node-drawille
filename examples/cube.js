@@ -4,6 +4,16 @@ var mat4 = glmatrix.mat4;
 var vec3 = glmatrix.vec3;
 var Canvas = require('../');
 
+vec3.transformMat4 = function(out, a, m) {
+  var x = a[0], y = a[1], z = a[2],
+    w = m[3] * x + m[7] * y + m[11] * z + m[15];
+  w = w || 1.0;
+  out[0] = (m[0] * x + m[4] * y + m[8] * z + m[12]) / w;
+  out[1] = (m[1] * x + m[5] * y + m[9] * z + m[13]) / w;
+  out[2] = (m[2] * x + m[6] * y + m[10] * z + m[14]) / w;
+  return out;
+};
+
 var c = new Canvas(160, 160);
 
 var points = [[-1,-1,-1],[-1,-1,1],[1,-1,1],[1,-1,-1],[-1,1,-1],[-1,1,1],[1,1,1],[1,1,-1]];
@@ -15,16 +25,19 @@ var cube = quads.map(function(quad) {
 });
 
 var projection = mat4.create();
-mat4.perspective(projection, Math.PI/2, 1, 1, 100);
+mat4.perspective(projection, Math.PI/3, 1, 1, 50);
 
 function draw() {
   var now = Date.now();
   var modelView = mat4.create();
   mat4.lookAt(modelView,
-              vec3.fromValues(0, 5, -10),
+              vec3.fromValues(0, 0.1, 4),
               vec3.fromValues(0, 0, 0),
               vec3.fromValues(0, 1, 0));
   mat4.rotateY(modelView, modelView, Math.PI*2*now/10000);
+  mat4.rotateZ(modelView, modelView, Math.PI*2*now/11000);
+  mat4.rotateX(modelView, modelView, Math.PI*2*now/9000);
+  mat4.scale(modelView, modelView, vec3.fromValues(Math.sin(now/1000*Math.PI)/2+1, 1, 1));
   c.clear();
   var transformed = cube.map(function(quad) {
     return quad.map(function(v) {
