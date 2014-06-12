@@ -33,7 +33,7 @@ var methods = {
 Object.keys(methods).forEach(function(method) {
   Canvas.prototype[method] = function(x, y) {
     if(!(x >= 0 && x < this.width && y >= 0 && y < this.height)) {
-      throw new Error('(' + [x, y].join(', ') + ') is out of the canvas!');
+      return;
     }
     x = Math.floor(x);
     y = Math.floor(y);
