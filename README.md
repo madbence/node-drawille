@@ -15,7 +15,7 @@ $ npm install drawille
 
 ## Usage
 
-See [example](example.js).
+See [examples](examples).
 
 This module provides a very basic API only, for fancy things,
 like drawing lines, use another module,
