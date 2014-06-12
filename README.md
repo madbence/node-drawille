@@ -1,7 +1,7 @@
 node-drawille
 =============
 
-![cube](screen.png)
+![cube](cube.gif)
 
 Drawing in terminal with unicode braille characters.
 The idea is based on [drawille](https://github.com/asciimoo/drawille)
