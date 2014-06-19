@@ -21,6 +21,8 @@ This module provides a very basic API only, for fancy things,
 like drawing lines, use another module,
 like [`bresenham`](https://github.com/madbence/node-bresenham).
 
+[`drawille-canvas`](https://github.com/madbence/node-drawille-canvas) provides HTML5 Canvas API for drawille (WIP).
+
 ## API
 
 #### Canvas(w, h)
