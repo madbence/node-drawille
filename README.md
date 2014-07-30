@@ -55,7 +55,9 @@ lines.
 
 ## Projects
 
-- [`vtop`](https://github.com/MrRio/vtop) uses `drawille` to draw CPU and memory usage charts in the terminal
+- [`vtop`](https://github.com/MrRio/vtop) uses it to draw CPU and memory usage charts in the terminal
+- [`datop`](https://github.com/maxogden/datop) uses it to draw [dat](https://github.com/maxogden/dat) statistics
+- [`boscillate`](https://www.npmjs.org/package/boscillate) uses it to draw [`baudio`](https://github.com/substack/baudio) soundwaves in real-time
 
 ## License
 
