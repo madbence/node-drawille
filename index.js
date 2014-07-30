@@ -49,11 +49,12 @@ Canvas.prototype.clear = function() {
   this.content.fill(0);
 };
 
-Canvas.prototype.frame = function frame() {
+Canvas.prototype.frame = function frame(delimiter) {
+  delimiter = delimiter || '\n';
   var result = [];
   for(var i = 0, j = 0; i < this.content.length; i++, j++) {
     if(j == this.width/2) {
-      result.push('\n');
+      result.push(delimiter);
       j = 0;
     }
     if(this.content[i] == 0) {
@@ -62,7 +63,7 @@ Canvas.prototype.frame = function frame() {
       result.push(String.fromCharCode(0x2800 + this.content[i]))
     }
   }
-  result.push('\n');
+  result.push(delimiter);
   return result.join('');
 };
 
