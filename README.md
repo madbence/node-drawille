@@ -46,10 +46,11 @@ Toggle point on `canvas` at the given position.
 
 Clear the whole canvas (delete every point).
 
-#### canvas.frame(delimiter)
+#### canvas.frame([delimiter])
 
 Return the current content of `canvas`, as a `delimiter`-delimited
 string. `delimiter` defaults to `\n`.
+
 It uses braille characters to represent points,
 so every line has length of `w/2`, and the string contains `h/4`
 lines.
