@@ -3,7 +3,7 @@ node-drawille
 
 ![cube](cube.gif)
 
-Drawing in terminal with unicode braille characters.
+Drawing in terminal with [unicode braille][] characters.
 The idea is based on [drawille](https://github.com/asciimoo/drawille)
 by @asciimoo.
 
@@ -64,3 +64,5 @@ lines.
 ## License
 
 MIT
+
+  [unicode braille]: http://en.wikipedia.org/wiki/Braille_Patterns#Chart
