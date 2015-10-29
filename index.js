@@ -50,7 +50,9 @@ Canvas.prototype.clear = function() {
 };
 
 Canvas.prototype.frame = function frame(delimiter) {
-  delimiter = delimiter || '\n';
+  if (delimiter == null) {
+    delimiter = '\n';
+  }
   var result = [];
   for(var i = 0, j = 0; i < this.content.length; i++, j++) {
     if(j == this.width/2) {
