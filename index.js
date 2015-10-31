@@ -6,17 +6,41 @@ var map = [
 ]
 
 function Canvas(width, height) {
-  if(width%2 != 0) {
-    throw new Error('Width must be multiple of 2!');
+  if (width == null) {
+    width = process.stdout.columns * 2 - 2;
   }
-  if(height%4 != 0) {
-    throw new Error('Height must be multiple of 4!');
+  if (height == null) {
+    height = process.stdout.rows * 4;
   }
+
   this.width = width;
   this.height = height;
-  this.content = new Buffer(width*height/8);
-  this.content.fill(0);
 }
+
+Object.defineProperties(Canvas.prototype, {
+  width: {
+    get: function () {
+      return this._width || 0;
+    },
+    set: function (width) {
+      width = Math.floor(width / 2) * 2;
+      this._width = width;
+      this.content = new Buffer(this.width*this.height/8);
+      this.content.fill(0);
+    }
+  },
+  height: {
+    get: function () {
+      return this._height || 0;
+    },
+    set: function (height) {
+      height = Math.floor(height / 4) * 4;
+      this._height = height;
+      this.content = new Buffer(this.width*this.height/8);
+      this.content.fill(0);
+    }
+  }
+});
 
 var methods = {
   set: function(coord, mask) {
