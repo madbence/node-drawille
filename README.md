@@ -1,5 +1,4 @@
-node-drawille
-=============
+# node-drawille [![Build Status](https://travis-ci.org/madbence/node-drawille.svg)](https://travis-ci.org/madbence/node-drawille)
 
 ![cube](cube.gif)
 
