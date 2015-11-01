@@ -1,6 +1,6 @@
 {
   "name": "drawille",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Drawing in terminal with unicode braille characters",
   "main": "index.js",
   "scripts": {
