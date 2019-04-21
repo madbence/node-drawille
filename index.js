@@ -25,7 +25,7 @@ Object.defineProperties(Canvas.prototype, {
     set: function (width) {
       width = Math.floor(width / 2) * 2;
       this._width = width;
-      this.content = new Buffer(this.width*this.height/8);
+      this.content = Buffer.alloc(this.width*this.height/8);
       this.content.fill(0);
     }
   },
@@ -36,7 +36,7 @@ Object.defineProperties(Canvas.prototype, {
     set: function (height) {
       height = Math.floor(height / 4) * 4;
       this._height = height;
-      this.content = new Buffer(this.width*this.height/8);
+      this.content = Buffer.alloc(this.width*this.height/8);
       this.content.fill(0);
     }
   }
