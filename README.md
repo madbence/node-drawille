@@ -26,6 +26,7 @@ this module provides a very basic API only, for fancy things, like drawing lines
 
 Create a new canvas with the given dimensions.
 `w` must be multiple of 2, `h` must be multiple of 4.
+Uses `columns` & `rows` from `process.stdout` as default values for `w` and `h`.
 
 ### `canvas.set(x, y)`
 
@@ -43,7 +44,7 @@ Toggle point on `canvas` at the given position.
 
 Clear the whole canvas (delete every point).
 
-### `canvas.frame([delimiter])`
+### `canvas.frame(delimiter)`
 
 return the current content of `canvas`, as a `delimiter`-delimited
 string. `delimiter` defaults to `\n`.
