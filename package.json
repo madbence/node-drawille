@@ -1,11 +1,18 @@
 {
   "name": "drawille",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Drawing in terminal with unicode braille characters",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "draw",
+    "canvas",
+    "braille",
+    "terminal"
   ],
   "scripts": {
     "test": "echo \"OK 1337/1337 passed! (100%)\""
