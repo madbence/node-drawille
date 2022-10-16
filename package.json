@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Drawing in terminal with unicode braille characters",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "index.js"
   ],
